@@ -12,6 +12,8 @@ var formidable = require('formidable');
 const path = require('path');
 var mongoose = require('mongoose'); 
 var mongoDBUri = process.env.MONGODB_URI;  
+var mongoDBAtlasUri = process.env.MONGODB_ATLAS;  
+var mongoDBUsed = mongoDBAtlasUri
 //var mongoDBUri = 'mongodb://localhost:27017/logger'
 
 /* let whitelist = ['::1']; */
@@ -21,37 +23,10 @@ let whitelist = ['::1', '::ffff:127.0.0.1'];
 var moment = require('moment-timezone');
 console.log(getCurrentIndianDateTime());
 
-
-
-
-
-
-
-
-
-
-
-
 logMongo('Introduction to Mongoose2');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.use(morgan({
-    connectionString: mongoDBUri
+    connectionString: mongoDBUsed
 }));
 
 app.use(ipWhitelist(ip => {
@@ -146,12 +121,12 @@ function getCurrentIndianDateTime(){
 function logMongo (messageTxt) {
 
     // make a connection
-    mongoose.connect(mongoDBUri, { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect(mongoDBUsed, { useNewUrlParser: true, useUnifiedTopology: true });
     // get reference to database
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function() {
-        console.log("Connection to " + mongoDBUri + "  -> Successful!");
+        console.log("Connection to " + mongoDBUsed + "  -> Successful!");
         // define Schema
         var messageSchema = mongoose.Schema({
         date: Date,
