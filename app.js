@@ -19,7 +19,7 @@ var mongoDBUsed = mongoDBAtlasUri
 
 /* let whitelist = ['::1']; */
 // THIS IS THE ARRAY CONTAINING THE IPS WHITELIST
-let whitelist = ['::1', '::ffff:127.0.0.1', '::ffff:10.69.244.94'];
+let whitelist = ['::1', '::ffff:127.0.0.1', '::ffff:10.45.127.204'];
 
 var moment = require('moment-timezone');
 console.log(getCurrentIndianDateTime());
