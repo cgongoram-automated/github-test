@@ -12,13 +12,14 @@ var formidable = require('formidable');
 const path = require('path');
 var mongoose = require('mongoose'); 
 var mongoDBUri = process.env.MONGODB_URI;  
-var mongoDBAtlasUri = process.env.MONGODB_ATLAS;  
+var mongoDBAtlasUri = process.env.MONGODB_ATLAS
+;  
 var mongoDBUsed = mongoDBAtlasUri
 //var mongoDBUri = 'mongodb://localhost:27017/logger'
 
 /* let whitelist = ['::1']; */
 // THIS IS THE ARRAY CONTAINING THE IPS WHITELIST
-let whitelist = ['::1', '::ffff:127.0.0.1'];
+let whitelist = ['::1', '::ffff:127.0.0.1', '::ffff:10.69.244.94'];
 
 var moment = require('moment-timezone');
 console.log(getCurrentIndianDateTime());
