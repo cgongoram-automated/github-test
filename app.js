@@ -19,7 +19,7 @@ var mongoDBUsed = mongoDBAtlasUri
 
 /* let whitelist = ['::1']; */
 // THIS IS THE ARRAY CONTAINING THE IPS WHITELIST
-let whitelist = ['::1', '::ffff:127.0.0.1', '::ffff:10.45.127.204'];
+let whitelist = ['::1', '::ffff:127.0.0.1', '::ffff:10.33.187.161'];
 
 var moment = require('moment-timezone');
 console.log(getCurrentIndianDateTime());
@@ -36,7 +36,6 @@ app.use(ipWhitelist(ip => {
   res.statusCode = 500;
   res.end('You shall not pass!');
 }));
-
 
 app.post('/api/whitelist/:ip', (req, res) => {
     whitelist.push(req.params.ip);
