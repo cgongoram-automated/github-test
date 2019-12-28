@@ -19,7 +19,7 @@ var mongoDBUsed = mongoDBAtlasUri
 
 /* let whitelist = ['::1']; */
 // THIS IS THE ARRAY CONTAINING THE IPS WHITELIST
-let whitelist = ['::1', '::ffff:127.0.0.1', '::ffff:10.33.187.161'];
+let whitelist = ['::1', '::ffff:127.0.0.1', '::ffff:10.43.188.220'];
 
 var moment = require('moment-timezone');
 console.log(getCurrentIndianDateTime());
@@ -30,12 +30,12 @@ app.use(morgan({
     connectionString: mongoDBUsed
 }));
 
-app.use(ipWhitelist(ip => {
+/* app.use(ipWhitelist(ip => {
     return whitelist.indexOf(ip) !== -1;
 }, function (req, res) { // Custom handling of blocked IPs
   res.statusCode = 500;
   res.end('You shall not pass!');
-}));
+})); */
 
 app.post('/api/whitelist/:ip', (req, res) => {
     whitelist.push(req.params.ip);
