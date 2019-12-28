@@ -11,6 +11,8 @@ var ss = require('socket.io-stream');
 var formidable = require('formidable');
 const path = require('path');
 var mongoose = require('mongoose'); 
+var mongoDBUri = process.env.MONGODB_URI;  
+//var mongoDBUri = 'mongodb://localhost:27017/logger'
 
 /* let whitelist = ['::1']; */
 // THIS IS THE ARRAY CONTAINING THE IPS WHITELIST
@@ -49,7 +51,7 @@ logMongo('Introduction to Mongoose2');
 
 
 app.use(morgan({
-    connectionString: 'mongodb://localhost:27017/logs-db'
+    connectionString: mongoDBUri
 }));
 
 app.use(ipWhitelist(ip => {
@@ -137,20 +139,19 @@ app.listen(port, function () {
 
 function getCurrentIndianDateTime(){
     var moment = require('moment-timezone');
-    var time = moment.tz('America/Mexico City').format("YYYY-MM-DDTHH:MM:ss");
+    var time = moment.tz('America/Mexico_City').format("YYYY-MM-DDTHH:MM:ss");
     return new Date(time);
 }
-
 
 function logMongo (messageTxt) {
 
     // make a connection
-    mongoose.connect('mongodb://localhost:27017/logger');
+    mongoose.connect(mongoDBUri, { useNewUrlParser: true, useUnifiedTopology: true });
     // get reference to database
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function() {
-        console.log("Connection to mongodb://localhost:27017/logger  -> Successful!");
+        console.log("Connection to " + mongoDBUri + "  -> Successful!");
         // define Schema
         var messageSchema = mongoose.Schema({
         date: Date,
@@ -169,4 +170,3 @@ function logMongo (messageTxt) {
     
     });
 }
-
