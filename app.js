@@ -1,7 +1,7 @@
 var express = require('express') 
 var app = express()
 var server = require('http').Server(app);
-const port = 8080;
+const port = process.env.PORT || 3000;
 const ipWhitelist = require('ip-whitelist');
 // mongoose-morgan
 var morgan = require('mongoose-morgan');
