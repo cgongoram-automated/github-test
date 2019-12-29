@@ -56,6 +56,7 @@ app.use('/js',express.static(__dirname + '/js'));
 app.use('/css', express.static(__dirname + '/css'));
 app.use("/image", express.static(__dirname + '/image'));
 app.use("/uploads", express.static(__dirname + '/uploads'));
+app.use("/video", express.static(__dirname + '/video'));
 
 app.get('/', function(request, response) {
     

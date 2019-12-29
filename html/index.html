@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Static website</title>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
-<!-- <form action="/" enctype="multipart/form-data" method="post">
-    <input type="file" name="upload" multiple>
-    <input type="submit" value="Upload">
-</form>
 
- -->
- <h1>This is a sample page</h1>
+
+<div class="vid-container">
+    <video class="bgvid" autoplay="autoplay" muted="muted" preload="auto" loop>
+        <source src="../video/leif_eliasson--glaciartopp.mp4" type="video/webm">
+    </video>
+    <div class="inner-container">
+      <video class="bgvid inner" autoplay="autoplay" muted="muted" preload="auto" loop>
+        <source src="../video/leif_eliasson--glaciartopp.mp4" type="video/webm">
+      </video>
+      <div class="box">
+        <h1>Login</h1>
+        <input type="text" placeholder="Username"/>
+        <input type="text" placeholder="Password"/>
+        <button>Login</button>
+        <p>Not a member? <span>Sign Up</span></p>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
