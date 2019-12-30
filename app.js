@@ -1,7 +1,7 @@
 var express = require('express') 
 var app = express()
 var server = require('http').Server(app);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const ipWhitelist = require('ip-whitelist');
 // mongoose-morgan
 var morgan = require('mongoose-morgan');
@@ -64,6 +64,11 @@ app.get('/', function(request, response) {
     response.sendFile(htmlDir + 'index.html');
 });
 
+app.get('/typing', function(request, response) {
+    
+    htmlDir = './html/'
+    response.sendFile( __dirname + "/html/index2.html" );
+});
 
 /* app.get('/', (req, res) => {
     console.log(req.connection.remoteAddress);
