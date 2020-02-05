@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Say voice="man" language="en-US">Hello world!</Say>
+    <Say voice="woman" language="fr-FR">Chapeau!</Say>
+    <Say voice="alice" language="es-MX" loop="2">Buenos dias!</Say>
+    <Say>
+      This message must be nested in a Response element
+      in order for Twilio to say it to your caller.
+    </Say>
+</Response>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Gather input="speech dtmf" timeout="3" finishOnKey="#" numDigits="1">
+        <Say>Please press 1 or say sales for sales. End with pound sign</Say>
+    </Gather>
+    <Say>We didn't receive any input. Goodbye!</Say>
+</Response>
