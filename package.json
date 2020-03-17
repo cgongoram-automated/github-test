@@ -130,7 +130,7 @@
         "mime-db": "1.42.0",
         "mime-types": "2.1.25",
         "minimatch": "3.0.4",
-        "minimist": "1.2.0",
+        "minimist": "1.2.2",
         "moment-timezone": "^0.5.27",
         "mongodb": "3.3.5",
         "mongoose": "5.7.13",
