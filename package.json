@@ -137,7 +137,7 @@
         "mongoose-legacy-pluralize": "1.0.2",
         "mongoose-morgan": "1.0.12",
         "morgan": "1.9.1",
-        "mpath": "0.6.0",
+        "mpath": "0.8.4",
         "mquery": "3.2.2",
         "ms": "2.0.0",
         "negotiator": "0.6.2",
