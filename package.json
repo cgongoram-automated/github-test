@@ -116,7 +116,7 @@
         "isexe": "2.0.0",
         "kareem": "2.3.1",
         "latest-version": "3.1.0",
-        "log4js": "^6.1.0",
+        "log4js": "^6.4.0",
         "log4js-node-mongodb": "^2.2.1",
         "logger": "0.0.1",
         "lowercase-keys": "1.0.1",
