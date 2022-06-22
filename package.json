@@ -84,7 +84,7 @@
         "get-stream": "3.0.0",
         "glob-parent": "5.1.0",
         "global-dirs": "0.1.1",
-        "got": "6.7.1",
+        "got": "11.8.5",
         "graceful-fs": "4.2.3",
         "has-binary2": "1.0.3",
         "has-cors": "1.1.0",
